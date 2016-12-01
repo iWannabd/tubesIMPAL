@@ -1,0 +1,104 @@
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Laporan Peminjaman</h4>
+                        <p class="category">laporan peminjaman buku hingga tanggal {{today}}</p>
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                        <table class="table table-striped">
+                            <thead>
+                                <th>Nama</th>
+                                <th>Buku</th>
+                                <th>Dipinjam pada</th>
+                                <th>Tanggal Kembali</th>                                
+                                <th>Dikembalikan pada</th>
+                                <th>Denda/hari</th>
+                                <th>Total Denda</th>                                
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="p in peminjamanmember">
+                                <td><div uib-popover="{{p.peminjam.email}}" popover-trigger="'mouseenter'">{{p.peminjam.nama}}</div></td>
+                                <td><div uib-popover="{{p.buku.deskripsi}}" popover-trigger="'mouseenter'">{{p.buku.judul}}</div></td>
+                                <td>{{p.dipinjam}}</td>
+                                <td>{{p.willback}}</td>
+                                <td>{{p.return}}</td>
+                                <td>{{p.denda}}</td>
+                                <td>{{p.totaldenda}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Laporan</h4>
+                        <p class="category">laporan inventaris buku hingga {{today}}</p>
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                        <table class="table table-striped">
+                            <thead>
+                                <th>ISBN</th>                                
+                                <th>Judul</th>
+                                <th>Penulis</th>
+                                <th>Tahun Terbit</th>
+                                <th>Kategori</th>                                
+                                <th>Tanggal Impor</th>
+                                <th>Hilang pada</th>                                
+                                <th>Hargabeli</th>                                
+                                <th>Status</th>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="b in bookss" >
+                                    <td>{{b.ISBN}}</td>
+                                    <td>{{b.judul}}</td>
+                                    <td>{{b.penulis}}</td>
+                                    <td>{{b.tahunterbit}}</td>
+                                    <td>{{b.kategori}}</td>
+                                    <td>{{b.tanggalimpor}}</td>
+                                    <td>{{b.hilang}}</td>
+                                    <td>{{b.hargabeli}}</td>
+                                    <td>{{b.status}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Laporan</h4>
+                        <p class="category">laporan anggota perpustakaan hingga {{today}}</p>
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                        <table class="table table-striped">
+                            <thead>
+                            <th>Email</th>
+                            <th>Nama</th>
+                            <th>Kontak</th>
+                            <th>Alamat</th>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="member in members">
+                                <td>{{member.email}}</td>
+                                <td>{{member.nama}}</td>
+                                <td>{{member.phone}}</td>
+                                <td>{{member.address}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

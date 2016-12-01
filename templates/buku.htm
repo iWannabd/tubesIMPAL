@@ -1,55 +1,48 @@
 <div class="content">
     <div class="container-fluid">
-        <div class="row">
+        <div class="row" style="width:100%;overflow-y:hidden;overflow-x:scroll;align-item:initial;height:auto;white-space: nowrap">
+            <div ng-repeat="book in books" class="card" style="width:250px;margin-left:20px;display:inline-block;text-align: left;white-space: normal">
+                <div class="content">
+                    <img src="img/book1.jpg" style="max-width: 100%; max-height: 100%">
+                </div>
+                <div class="content">
+                    <h5>{{book.judul}}</h5>
+                    <p>{{book.deskripsi}} </p>
+                    <div class="footer">
+                        <hr>
+                        <button class="btn btn-info btn-fill btn-xs" ng-click="pilih(book)">Detil</button>
+                        <button class="btn btn-info btn-fill btn-xs" ng-click="delete(book)">Hapus</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" ng-show="showDetil" style="margin-top:20px">
             <div class="col-md-4">
                 <div class="card">
                     <div class="content">
                         <img src="img/book1.jpg" style="max-width: 100%; max-height: 100%">
                     </div>
-
-                    <div class="content">
-                        <h5>Redesign The Web</h5>
-                        <p>Buku ini menjelaskan bagaiman sebuah web dapat di rancang sedemikian sehingga bla bla </p>
-                    </div>
-
-                    <div class="content">
-                        <button class="btn btn-info btn-fill btn-wd" >Selengkapnya</button>
-                    </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-8">
                 <div class="card">
                     <div class="content">
-                        <img src="img/book1.jpg" style="max-width: 100%; max-height: 100%">
+                        <h4 class="title">{{selectedbook.judul}}</h4>
                     </div>
-
                     <div class="content">
-                        <h5>Redesign The Web</h5>
-                        <p>Buku ini menjelaskan bagaiman sebuah web dapat di rancang sedemikian sehingga bla bla </p>
-                    </div>
-
-                    <div class="content">
-                        <button class="btn btn-info btn-fill btn-wd" >Selengkapnya</button>
+                        <p>{{selectedbook.deskripsi}}</p>
+                        <p>Penulis:         {{selectedbook.penulis}}</p>
+                        <p>Tahun Terbit:    {{selectedbook.tahunterbit}}</p>                          
+                        <p>Kategori:        {{selectedbook.kategori}}</p>
+                        <p>Tanggal Impor:   {{selectedbook.tanggalimpor}}</p>
+                        <p>Tanggal Hilang:  {{selectedbook.hilang}}</p>
+                        <p>Harga:           {{selectedbook.hargabeli}}</p>
+                        <p>Status:          {{selectedbook.status}}</p>
                     </div>
                 </div>
+                <button class="btn btn-info btn-fill btn-wd" ng-click="open(false)">Tambah Buku</button>
+                <button class="btn btn-info btn-fill btn-wd" ng-click="open(true)">Edit Buku</button>
             </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="content">
-                        <img src="img/book1.jpg" style="max-width: 100%; max-height: 100%">
-                    </div>
-
-                    <div class="content">
-                        <h5>Redesign The Web</h5>
-                        <p>Buku ini menjelaskan bagaiman sebuah web dapat di rancang sedemikian sehingga bla bla </p>
-                    </div>
-
-                    <div class="content">
-                        <button class="btn btn-info btn-fill btn-wd" >Selengkapnya</button>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
 </div>

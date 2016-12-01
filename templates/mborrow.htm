@@ -1,0 +1,40 @@
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Daftar Buku</h4>
+                        <p class="category">berikut adalah daftar buku yang dipinjam</p>
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ISBN</th>
+                                <th>Buku</th>
+                                <th>Dipinjam</th>
+                                <th>Kembali</th>
+                                <th>Dikembalikan</th>
+                                <th>Denda/hari</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="p in peminjamans">
+                                <td>{{p.buku.ISBN}}</td>
+                                <td>{{p.buku.judul}}</td>
+                                <td>{{p.dipinjam}}</td>
+                                <td>{{p.willback}}</td>
+                                <td>{{p.return}}</td>
+                                <td>{{p.denda}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

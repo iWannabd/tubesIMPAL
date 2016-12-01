@@ -1,0 +1,23 @@
+<div modal="showModal" close="cancel()">
+    <div class="modal-header">
+        <h4>Pengembalian</h4>
+    </div>
+    <div class="modal-body">
+
+        <label><input ng-change='hitungdenda()' ng-model="pinjam.hilang" type="checkbox"> Apakah Buku hilang</label>
+        
+        <div class="form-group">
+            <label>Keterlambatan</label>
+            <input ng-model="pinjam.keterlambatan" disabled type="number" placeholder="Hari" class="form-control border-input" >
+        </div>
+
+        <div class="form-group">
+            <label>Total Total Denda</label>
+            <input ng-model="pinjam.totaldenda" disabled type="number" placeholder="Rupiah" class="form-control border-input" >
+        </div>
+
+    </div>
+    <div class="modal-footer">
+    <button class="btn btn-success" ng-click="kembali(buku)">Ok</button>
+    </div>
+</div>

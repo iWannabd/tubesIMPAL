@@ -1,0 +1,62 @@
+<div modal="showModal" close="cancel()">
+    <div class="modal-header">
+        <h4>Form Buku</h4>
+    </div>
+    <div class="modal-body">
+        
+        <div class="form-group">
+            <label>Judul Buku</label>
+            <input ng-model="buku.judul" type="text" class="form-control border-input" >
+        </div>
+
+        <div class="form-group">
+            <label>ISBN</label>
+            <input ng-model="buku.ISBN" type="text" class="form-control border-input" >
+        </div>
+
+        <div class="form-group">
+            <label>Penulis</label>
+            <input ng-model="buku.penulis" type="text" class="form-control border-input" >
+        </div>
+
+        <div class="form-group">
+            <label>Tahun Terbit</label>
+            <input ng-model="buku.tahunterbit" type="number" class="form-control border-input" >
+        </div>
+
+        <div class="form-group">
+            <label>Kategori</label>
+            <input ng-model="buku.kategori" type="text" class="form-control border-input" >
+        </div>
+
+        <div class="form-group">
+            <label>Harga Beli</label>
+            <input ng-model="buku.hargabeli" type="number" class="form-control border-input" >
+        </div>
+
+        <div class="form-group">
+            <label>Tanggal Impor</label>
+            <input ng-model="buku.tanggalimpora" type="date" class="form-control border-input" >
+        </div>
+
+        <div class="form-group">
+            <label>Status</label>
+            <input ng-model="buku.status" type="text" class="form-control border-input" >
+        </div>
+
+        <div class="form-group">
+            <label>Tanggal Hilang</label>
+            <input ng-disabled="edit" ng-model="buku.hilanga" type="date" class="form-control border-input">
+        </div>
+
+        <div class="form-group">
+            <label>Deskripsi</label>
+            <textarea ng-model="buku.deskripsi"  class="form-control border-input"></textarea>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+    <button class="btn btn-success" ng-click="tambah(buku)">Ok</button>
+    <button class="btn" ng-click="batal()">Batal</button>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Ubah Profil</h4>
+                    </div>
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Nama</label>
+                                    <input ng-model="profil.nama" type="text" class="form-control border-input">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input ng-model="profil.email" type="email" class="form-control border-input">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="form-group">
+                                    <label>Alamat</label>
+                                    <input ng-model="profil.address" type="text" class="form-control border-input" >
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>Telepon</label>
+                                    <input ng-model="profil.phone" type="number" class="form-control border-input">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <button ng-click="profil.$save()" type="submit" class="btn btn-info btn-fill btn-wd">Ubah</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

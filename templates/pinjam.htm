@@ -10,28 +10,81 @@
                     <div class="content table-responsive table-full-width">
                         <table class="table table-striped">
                             <thead>
-                                <th>Id</th>
                                 <th>Nama</th>
-                                <th>Buku dipinjam</th>
-                                <th>Jangka Waktu</th>
-                                <th>Sudah Kembali</th>
+                                <th>Buku</th>
+                                <th>Dipinjam pada</th>
+                                <th>Tanggal Kembali</th>                                
+                                <th>Dikembalikan pada</th>
+                                <th>Denda/hari</th>
+                                <th>Total Denda</th>                                
+                                <th>Aksi</th>                                
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Udin Marudin</td>
-                                <td>Design Sprint</td>
-                                <td>12-12-2016</td>
-                                <td>Sudah</td>
+                            <tr ng-repeat="p in peminjamanmember">
+                                <td><div uib-popover="{{p.peminjam.email}}" popover-trigger="'mouseenter'">{{p.peminjam.nama}}</div></td>
+                                <td><div uib-popover="{{p.buku.deskripsi}}" popover-trigger="'mouseenter'">{{p.buku.judul}}</div></td>
+                                <td>{{p.dipinjam}}</td>
+                                <td>{{p.willback}}</td>
+                                <td>{{p.return}}</td>
+                                <td>{{p.denda}}</td>
+                                <td>{{p.totaldenda}}</td>                                
+                                                                
+                                <td>
+                                    <button class="btn btn-info btn-fill btn-xs" ng-click="open(p)" >Kembali</button>
+                                    <button class="btn btn-info btn-fill btn-xs" ng-click="hapus(p)" >Hapus</button>                                                                                            
+                                </td>
                             </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
-
-
-
+        </div>
+        <div class="row" >
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="header">
+                        <h4 class="title">Form Peminjam</h4>
+                    </div>
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Email Peminjam</label>
+                                    <select ng-model="pinjam.uid"  class="form-control border-input">
+                                        <option ng-value="member.$id" ng-repeat="member in members">{{member.email}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Buku</label>
+                                    <select ng-model="pinjam.bid"  class="form-control border-input">
+                                        <option ng-value="buku.$id" ng-repeat="buku in books">{{buku.judul}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Tanggal Buku Akan Dikembalikan</label>
+                                    <input ng-model="pinjam.willbacka" type="date" placeholder="Maximal satu minggu dari hari ini" class="form-control border-input">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Denda (Rp)</label>
+                                    <input ng-model="pinjam.denda" type="number" placeholder="jumlah denda keterlambatan pengembalian perhari" class="form-control border-input">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <button class="btn btn-info btn-fill btn-wd" ng-click="tambah(pinjam)" >Tambah</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
